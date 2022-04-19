@@ -24,59 +24,230 @@ display: flexbox;
     border-style: dotted black; background-color: white; margin-right: 45%; width: 30%;
     display: flexbox; align-items: flex-end; box-sizing: border-box;
 }*/
-body{
-    background-color: bisque;
-}
-.grid-container{
-grid: repeat(13,auto-flow)/ auto-flow; border-style: dotted blue;
-    display: grid; border-style: dotted green; justify-content: space-evenly; text-align: center;
+body {
+    background-color: bisque; max-width: 100%; bottom: 80%;
 }
 
-.item1{
-border: palegreen solid;
+.grid-container {
+    grid: repeat(1, auto)/auto;
+    border-style: dotted blue;
+    display: grid;
+    border-style: dotted green;
+    justify-content: space-evenly;
+    text-align: center;
+    gap: 2%;
+    box-sizing: border-box; min-width: 100%;
+     bottom: 80%; overflow:hidden
 }
 
-.item2{
+/* Header- TITLE + RULES - MAYBE ADD NAV*/
+.item1 {
+    border: palegreen solid;
+    background-color: white;
+    height: 80%;
+    width: 95%;
+    height: 30%;
+    padding: 10%;
+    box-sizing: border-box;
+    justify-self: center;
+}
+
+/*WINNING LOTTO # DISPLAY BOARD*/
+.item2 {
     border: blue solid;
-    
+    width: 60%;
+    height: 28%;
+    padding: 18%;
+    background-color: white;
+    top: 60%;
+
 }
-.item3{
-    border:orange solid;
-    
+
+/*CLICK TO PLAY LOTTO BUTTON*/
+.item3 {
+    border: orange solid;
+    width: 60%;
+    height: 30%;
+    padding: 3%;
+    box-sizing: border-box;
+    justify-self: center;
+    background-color: white;
 }
-.item4{
+
+
+/*HUMAN PLAYER LOTTO # DISPLAY*/
+.item4 {
     border: purple solid;
-    
+    background-color: white;
+    box-sizing: border-box;
+    width: 70%;
+    height: 20%;
+    padding: 23%;
+    position: relative;
+    right: 25%;
+    bottom: 5.5%;
+
 }
-.item5{
+
+/*COMP PLAYER LOTTO # DISPLAY*/
+.item5 {
     border: aqua solid;
+    background-color: white;
+    box-sizing: border-box;
+    width: 70%;
+    height: 20%;
+    padding: 23%;
+    position: relative;
+    bottom: 125.5%;
+    left: 55%;
 }
-.item6{
+
+/*PLAYER BANK DISPLAY*/
+.item6 {
     border: gray solid;
+    background-color: white;
+    box-sizing: border-box;
+    width: 65%;
+    height: 5%;
+    padding: 5%;
+    position: relative;
+    right: 25%;
+    bottom: 482.5%;
+    right: 22.5%;
+
 }
-.item7{
+
+/* COMPUTER BANK DISPLAY*/
+.item7 {
     border: brown solid;
+    background-color: white;
+    box-sizing: border-box;
+    width: 65%;
+    height: 5%;
+    padding: 5%;
+    position: relative;
+    position: relative;
+    bottom: 653%;
+    left: 57.5%;
+
 }
-.item8{
+
+/*POWER PLAY #'S DISPLAY*/
+.item8 {
     border: magenta solid;
+    width: 60%;
+    height: 28%;
+    padding: 18%;
+    background-color: white;
+    position: relative;
+    bottom: 228%;
 }
-.item9{
-    border: yellow solid
-    
+
+/*BET FUNCTION/BOARD*/
+.item9 {
+    border: yellow solid;
+    width: 40%;
+    height: 30%;
+    padding: 3%;
+    box-sizing: border-box;
+    background-color: white;
+    position: relative;
+    bottom: 940%;
+    justify-self: center;
+    right: 30%;
+
 }
-.item10{
+
+/*"click to bet*/
+.item10 {
+    border: lightblue solid;
+
+    width: 40%;
+    height: 30%;
+    padding: 3%;
+    box-sizing: border-box;
+    background-color: white;
+    position: relative;
+    bottom: 1195%;
+    justify-self: center;
+    left: 26%;
+}
+
+/*POWER PLAY BUTTON- not sure about difference b/n last 2 buttons- decide and remove if necessary*/
+.item11 {
     border: black solid;
+    width: 45%;
+    height: 30%;
+    padding: 3%;
+    box-sizing: border-box;
+    background-color: white;
+    position: relative;
+    bottom: 1175%;
+    justify-self: center;
+    right: 2%;
 }
-.item11{
+
+/*PLAYER POWER # DISPLAY*/
+.item12 {
     border: slateblue solid;
+    background-color: white;
+    box-sizing: border-box;
+    width: 70%;
+    height: 20%;
+    padding: 23%;
+    position: relative;
+    right: 25%;
+    bottom: 228.5%;
+
 }
-.item12{
+
+/*COMP POWER # DISPLAY*/
+.item13 {
     border: greenyellow solid;
+    background-color: white;
+    box-sizing: border-box;
+    width: 70%;
+    height: 20%;
+    padding: 23%;
+    position: relative;
+    bottom: 347%;
+    left: 55%;
+
 }
-.item13{
+
+/*END GAME BUTTON/FUNCTION*/
+.item14 {
     border: blueviolet solid;
-    
+    width: 45%;
+    height: 30%;
+    padding: 3%;
+    box-sizing: border-box;
+    background-color: white;
+    position: relative;
+    bottom: 2000%;
+    justify-self: center;
+
+
 }
-.item14{
+
+/*How to Play Section*/
+.howToPlay {
+    border: solid cadetblue;
+    width: 50%;
+    height: 10%;
+    padding: 50%;
+    position: relative; bottom: 160%;
+    justify-self: center;
+}
+
+/*FOOTER*/
+.item15 {
     border: orangered solid;
+    width: 250%;
+    justify-self: center;
+    padding: 5%;
+    ;
+    box-sizing: border-box;
+position: relative;
+    bottom: 1200%;
 }
