@@ -1,8 +1,17 @@
 
 body {
-    background-color: bisque; max-width: 100%; bottom: 80%;
+    background-color: rgb(13, 10, 6); max-width: 100%; bottom: 80%;
 }
-
+#myVideo{
+    position:fixed;
+    right:0;
+    bottom:0;
+    top:0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.75;
+    transition: 0.25s ease-in-out;
+}
 .grid-container {
     grid: repeat(1, auto)/auto;
     border-style: dotted blue;
@@ -13,6 +22,7 @@ body {
     gap: 2%;
     box-sizing: border-box; min-width: 100%;
      bottom: 80%; overflow:hidden
+     
 }
 
 /* Header- TITLE + RULES - MAYBE ADD NAV*/
@@ -25,6 +35,10 @@ body {
     padding: 10%;
     box-sizing: border-box;
     justify-self: center;
+    position: relative;
+    top: 10%;
+
+     
 }
 
 /*WINNING LOTTO # DISPLAY BOARD*/
@@ -34,7 +48,8 @@ body {
     height: 28%;
     padding: 18%;
     background-color: white;
-    top: 60%;
+    top: 25%;
+    position: relative;
 
 }
 
@@ -47,6 +62,7 @@ body {
     box-sizing: border-box;
     justify-self: center;
     background-color: white;
+    position: relative;
 }
 
 
@@ -213,6 +229,7 @@ body {
     padding: 50%;
     position: relative; bottom: 160%;
     justify-self: center;
+    background-color: white;
 }
 
 /*FOOTER*/
@@ -225,4 +242,5 @@ body {
     box-sizing: border-box;
 position: relative;
     bottom: 1200%;
+    background-color: white;
 }
