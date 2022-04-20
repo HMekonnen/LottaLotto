@@ -2,6 +2,10 @@
 body {
     background-color: rgb(13, 10, 6); max-width: 100%; bottom: 80%;
 }
+
+#playerDisplay, #computerDisplay, #houseDisplay{
+    font-size: 150%; font-family:cursive; font-weight: bolder; background-color: burlywood;
+}
 #myVideo{
     position:fixed;
     right:0;
@@ -63,6 +67,7 @@ body {
     justify-self: center;
     background-color: white;
     position: relative;
+    font-size: 120% ; font-weight: bold;
 }
 
 

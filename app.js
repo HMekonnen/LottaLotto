@@ -7,7 +7,7 @@
 class Lotto {
     constructor (playerName, lottoNums, bankValue, powerPlayNums){
     this.playerName = playerName;
-    this.lottoNums = [Math.floor(Math.random()*(69-1)+1),Math.floor(Math.random()*(69-1)+1),Math.floor(Math.random()*(69-1)+1),Math.floor(Math.random()*(69-1)+1),Math.floor(Math.random()*(69-1)+1)]
+    this.lottoNums = [Math.floor(Math.random()*(10-1)+1),Math.floor(Math.random()*(10-1)+1),Math.floor(Math.random()*(10-1)+1),Math.floor(Math.random()*(10-1)+1),Math.floor(Math.random()*(10-1)+1)]
     this.bankValue = bankValue;
     this.powerPlayNums = [Math.floor(Math.random()*(5-1)+1)]
     //options: 1. add methods to class 2. Declare functions outside of class. funcs needed: play()- placeBet(ensure bet sum <= bankvalue)- playPowerPlay(), Lotto + pplayPrize() -end game/declareWinner()- once game is functional, trim some fat off.
@@ -58,6 +58,46 @@ class Lotto {
    }
 }
 
+let testing = "This worksss"
+/*function play() {
+    document.getElementById("item3").innerHTML = play();
+   // document.getElementById("playerDisplay").innerHTML = "Button is in motion!" // This did not work 
+    //document.getElementById("playerDisplay").innerHTML = testing // This did not work 
+  }*/
+  
+
+  function play(){
+    
+    
+  document.getElementById("playerDisplay").innerHTML = player.lottoNums
+  document.getElementById("computerDisplay").innerHTML = computer.lottoNums
+  document.getElementById("houseDisplay").innerHTML = house.lottoNums
+     
+
+let playerMatchSum = 0
+let computerMatchSum = 0
+
+function play(){
+  for (let i=0; i<=house.lottoNums.length; i++){
+  if (player.lottoNums[i] === house.lottoNums[i]){
+   playerMatchSum+=1
+   } 
+   if (computer.lottoNums[i] === house.lottoNums[i]){
+   computerMatchSum+=1
+   } 
+  }
+  console.log (`House:     ${house.lottoNums}`)
+  console.log (`Player:    ${player.lottoNums}`)
+  console.log (`Computer:  ${computer.lottoNums}`)
+  }
+  
+  play()
+    
+    
+    //document.getElementById("playerDisplay").innerHTML = "Button is in motion!" // this works!!
+   //  document.getElementById("playerDisplay").innerHTML = testing // this does indeed work
+    }
+  
 
 
  /* let powerPlayPrize = (x*1000 )-> sent to player bankValue - if #'s don't match ((x/4) * 100)is added to computers bank value
@@ -93,8 +133,8 @@ class Lotto {
                                            
    }
 }
-lottoPrize(4)
-powerPlayPrize(0,40)
+lottoPrize(5)
+powerPlayPrize(0,10)
 // powerPlayPrize() test - successful-> powerPlayPrize( 3, 500)
 
 /*play function + bet function + endGame function*/
