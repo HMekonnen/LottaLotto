@@ -19,11 +19,45 @@ class Lotto {
  let player= new Lotto("Player",[],2,[])
  let computer= new Lotto("Computer",[],2,[])
 
+ // Variables to keep track of # matches per game per player
+ let playerMatchSum = 0
+ let computerMatchSum = 0
 
-   /* let bet + button = betSum // Sum value/ function needed here*/
+ // Attempt at simplifying my life -assigned variables to hold indiv .lottoNums
+ let houseLottoNums = house.lottoNums
+ let playerLottoNums = player.lottoNums
+ let computerLottoNums = computer.lottoNums 
+ // May assign the same for bankValues once game is up and running. ->let computerBank = computer.bankValue  
+ 
+ // play() -triggered by play button- compares both player [i]'s w/ house lotto numbers and adds num matches to match sum variables
+ function play(){
+    document.getElementById("playerDisplay").innerHTML = player.lottoNums
+    document.getElementById("computerDisplay").innerHTML = computer.lottoNums
+    document.getElementById("houseDisplay").innerHTML = house.lottoNums
+
+   for (let i =0; i <houseLottoNums.length; i++){
+    
+   if (playerLottoNums[i] === houseLottoNums[i]){
+        playerMatchSum++
+   }  
+    
+  
+     if (computerLottoNums[i]===houseLottoNums[i]){
+         computerMatchSum++ 
+     }
+   
+ 
+   }
+   /* Lotto # + Sum displays - will need to infuse w/ DOM at some point. i.e document.getElementById("playerDisplay").innerHTML = player.lottoNums*/
+    console.log (`House Lotto #'s:          ${houseLottoNums}`)
+    console.log (`Player Lotto #'s:         ${playerLottoNums}`)
+    console.log  (`Computer Lotto #'s:      ${computerLottoNums}`)
+    console.log (`Player Matched Total:     ${playerMatchSum}`)
+    console.log  (`Computer Matched Total:  ${computerMatchSum}`)
+   }
+  
    
 
-   
    //lottoPrize function - determines prize and updates bank value + console.log - param = quantMatched which = numMatches/case selectors.
    function lottoPrize(quantMatched){
     let numMatches = quantMatched
@@ -57,52 +91,14 @@ class Lotto {
                                            
    }
 }
+/* let bet + button = betSum // Sum value/ function needed here - bet() must have a condition to ensure player doesn't bet more $ than they have in the bank*/
+/* playPowerPlay () here - similar to play() but potential variables = 1,2, or 3 guesses are possible*/
 
-let testing = "This worksss"
-/*function play() {
-    document.getElementById("item3").innerHTML = play();
-   // document.getElementById("playerDisplay").innerHTML = "Button is in motion!" // This did not work 
-    //document.getElementById("playerDisplay").innerHTML = testing // This did not work 
-  }*/
+
   
-
-  function play(){
-    
-    
-  document.getElementById("playerDisplay").innerHTML = player.lottoNums
-  document.getElementById("computerDisplay").innerHTML = computer.lottoNums
-  document.getElementById("houseDisplay").innerHTML = house.lottoNums
-     
-
-let playerMatchSum = 0
-let computerMatchSum = 0
-
-function play(){
-  for (let i=0; i<=house.lottoNums.length; i++){
-  if (player.lottoNums[i] === house.lottoNums[i]){
-   playerMatchSum+=1
-   } 
-   if (computer.lottoNums[i] === house.lottoNums[i]){
-   computerMatchSum+=1
-   } 
-  }
-  console.log (`House:     ${house.lottoNums}`)
-  console.log (`Player:    ${player.lottoNums}`)
-  console.log (`Computer:  ${computer.lottoNums}`)
-  }
-  
-  play()
-    
-    
-    //document.getElementById("playerDisplay").innerHTML = "Button is in motion!" // this works!!
-   //  document.getElementById("playerDisplay").innerHTML = testing // this does indeed work
-    }
-  
-
-
  /* let powerPlayPrize = (x*1000 )-> sent to player bankValue - if #'s don't match ((x/4) * 100)is added to computers bank value
  betSum = amount bet by player */
- /* Need a condition to guarantee player cannot bet more than their bank value*/
+ /* Need to incorporate a condition to guarantee player cannot bet more than their bank value - to be added to bet()*/
  
  function powerPlayPrize(quantMatched, betSum){
     let numMatches = quantMatched
@@ -133,8 +129,7 @@ function play(){
                                            
    }
 }
-lottoPrize(5)
-powerPlayPrize(0,10)
+// lottoPrize() test -> successful -> lottoPrize(5)
 // powerPlayPrize() test - successful-> powerPlayPrize( 3, 500)
 
 /*play function + bet function + endGame function*/
@@ -151,8 +146,10 @@ AKA a playertotalMatch & compTotalMatch might be necessary.
 
 Repeat similar pseudocode for powerPlay 
 
+4.20.22 - Discovered I might not need lottoPrize() and powerPlayPrize() - if I incorporate outcomes in play() & playPowerPlay() - sad but true :'(  
+
 Main Lotto Game Process: Player clicks play-> triggers play() which triggers-> lottoPrize()- then 3 options- play again, end game, or powerplay.
 PowerPlay Process: Player places bet/ assigns bet value- clicks play powerPlay - triggers playPowerPlay which triggers- powerPrize- then 3 options- play again, end game, or lotto play.
 
-Read up on objectkey/value/element - to potentially "arrayalize" lottoPrize function outcomes- aka if its computers prize- it conforms- allowing us to kill 2 birds w/ one function.- alt, think of alternative solution. - 
+- Line 149 discovery eliminates the need for this feature- but it would be useful to find out how its done. Read up on objectkey/value/element - to potentially "arrayalize" lottoPrize function outcomes- aka if its computers prize- it conforms- allowing us to kill 2 birds w/ one function.- alt, think of alternative solution. - 
 */
