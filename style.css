@@ -3,7 +3,7 @@ body {
     background-color: rgb(13, 10, 6); max-width: 100%; bottom: 80%;
 }
 
-#playerDisplay, #computerDisplay, #houseDisplay{
+#playerDisplay, #computerDisplay, #houseDisplay, #playerBank, #compBank, #housePowerDisplay, #playerPowerDisplay, #computerBank {
     font-size: 150%; font-family:cursive; font-weight: bolder; background-color: burlywood;
 }
 #myVideo{
@@ -151,6 +151,7 @@ body {
     bottom: 940%;
     justify-self: center;
     right: 30%;
+    font-size: 120% ; font-weight: bold;
 
 }
 
@@ -167,6 +168,7 @@ body {
     bottom: 1195%;
     justify-self: center;
     left: 26%;
+    font-size: 120% ; font-weight: bold;
 }
 
 /*POWER PLAY BUTTON- not sure about difference b/n last 2 buttons- decide and remove if necessary*/
@@ -181,6 +183,7 @@ body {
     bottom: 1175%;
     justify-self: center;
     right: 2%;
+    font-size: 120% ; font-weight: bold;
 }
 
 /*PLAYER POWER # DISPLAY*/
@@ -222,6 +225,7 @@ body {
     position: relative;
     bottom: 2000%;
     justify-self: center;
+    font-size: 120% ; font-weight: bold;
 
 
 }

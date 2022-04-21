@@ -1,5 +1,5 @@
 // Webpage background video
-//let video = document.getElementById("myVideo");
+let video = document.getElementById("myVideo");
 
 /* Create a class for future objects* lottoNum + powerPlayNums = arrays*/
 //lottoPrize function - determines prize and updates bank value + console.log - param = quantMatched which = numMatches/case selectors.
@@ -27,14 +27,19 @@ class Lotto {
  let houseLottoNums = house.lottoNums
  let playerLottoNums = player.lottoNums
  let computerLottoNums = computer.lottoNums 
- // May assign the same for bankValues once game is up and running. ->
+ 
   //follow-up: Created to test- fix for computers bank - it worked, not sure why. in play() using comp.bankValue- sum kept coming up 20,000 over
- let compBank = computer.bankValue  
-  
- //test to fix computers bank - it worked, not sure why. in play() using comp.bankValue- sum was 20,000 over
-  // works when included in play function did not serve its purpose outside of function. - Strange. -> let compBank= computer.bankValue
-
-
+ let compBank = computer.bankValue ; 
+ let playerBank = player.bankValue;
+ 
+let computerBank= document.getElementById("compBank").innerHTML = compBank;
+let compBankDisplay= document.getElementById("compBank").innerHTML = compBank;
+let playersBank= document.getElementById("playerBank").innerHTML = playerBank;  
+//Power play variables
+let playerPowerNums = player.powerPlayNums;
+let housePowerNums = house.powerPlayNums;
+let betSum= 0;
+// yields error when declare outside of function - let betSum = document.getElementById("betSum").value;
 //lottoPrize function - determines prize and updates bank value + console.log - param = quantMatched which = numMatches/case selectors.
  
  function lottoPrize(quantMatched){
@@ -72,13 +77,12 @@ class Lotto {
 
 
 
-
-
  // play() -triggered by play button- compares both player [i]'s w/ house lotto numbers and adds num matches to match sum variables
  function play(){
-    /* let playerDisplay1= document.getElementById("playerDisplay").innerHTML = playerLottoNums
+     let playerDisplay1= document.getElementById("playerDisplay").innerHTML = playerLottoNums
      let compDisplay1= document.getElementById("computerDisplay").innerHTML = computer.lottoNums
-     let houseDisplay1=document.getElementById("houseDisplay").innerHTML = house.lottoNums */
+     let houseDisplay1=document.getElementById("houseDisplay").innerHTML = house.lottoNums 
+
          console.log(`P Bank Before Draw: ${player.bankValue}`)
         console.log(`C Bank Before Draw: ${computer.bankValue}`)
         
@@ -114,13 +118,8 @@ class Lotto {
   }
    
 
-   
-/* let bet + button = betSum // Sum value/ function needed here - bet() must have a condition to ensure player doesn't bet more $ than they have in the bank*/
-/* playPowerPlay () here - similar to play() but potential variables = 1,2, or 3 guesses are possible*/
-
-
   
- /* let powerPlayPrize = (x*1000 )-> sent to player bankValue - if #'s don't match ((x/4) * 100)is added to computers bank value
+ /* let powerPlayPrize = (x*1000 )-> sent to player bankValue - if #'s don't match ((x/4) * 100) is added to computers bank value
  betSum = amount bet by player */
  /* Need to incorporate a condition to guarantee player cannot bet more than their bank value - to be added to bet()*/
  
@@ -154,13 +153,62 @@ class Lotto {
    }
 }
 
-play()
+// Bug: Player matched total keeps returning 1 - even when #'s don't match. 
+function powerPlay(){
+    let playerPowerDisplay= document.getElementById("playerPowerDisplay").innerHTML = playerPowerNums;
+    let housePowerDisplay=document.getElementById("housePowerDisplay").innerHTML = housePowerNums;
+    let powerPlayyCompBankDisplay                                           = document.getElementById("computerBank").innerHTML = compBank;
+
+     playerMatchSum= 0
+    betSum= document.getElementById("betSum").value;
+     for (let i =0; i < housePowerNums.length; i++){
+         if (playerPowerNums[i] === housePowerNums[i]){
+             playerMatchSum = 1;      
+         }  
+     
+        /* Maybe unnecessary-  else {
+              playerMatchSum = 0;    
+          }*/  }
+         console.log (`House PowerPlay #:          ${house.powerPlayNums}`)
+         console.log (`Player PowerPlay #:         ${player.powerPlayNums}`)
+          console.log("------------------------------------------")
+          console.log(`Bet: ${betSum}`)
+         console.log(`Player Bank Before: ${playerBank} `) 
+         console.log(`Computer Bank Before: ${compBank} `) 
+         console.log (`Player Matched Total:     ${playerMatchSum}`)
+         
+         console.log("------------------------------------------")
+         console.log(powerPlayPrize(playerMatchSum,betSum))
+          console.log("------------------------------------------")
+              console.log(`Player Bank After: ${playerBank} `) 
+               console.log(`Computer Bank After: ${compBank} `) 
+           
+         
+        
+         }
+         
+ 
+/* let bet + button = betSum // Sum value/ function needed here - bet() must have a condition to ensure player doesn't bet more $ than they have in the bank*/
+function bet(){ // do not forget to add condition that bet cannot be > bankvalue.
+    betSum= document.getElementById("betSum").value;
+    alert(`You are about to place a bet of: $${betSum}. Please click "OK" to proceed.`);
+    
+powerPlay();
+}
+
+
+
+/*
+<input class="item9" id="betSum" placeholder="Enter Bet Sum Here" > Bet function / board </input>
+<button class="item10" onclick="bet()" id="betButton"> Click to bet! </button>
+*/
+//play()
 
 // lottoPrize() test -> successful -> lottoPrize(5)
 // powerPlayPrize() test - successful-> powerPlayPrize( 3, 500)
 
 /*4.20 16:20 - items to do: 
-1. Figure out how to input bet (w/condition bet cannot be > bank.value)- > Create bet function- what does it do? Where will it go? - I'm thinking it will be the mother function for entire powerplay.
+ X 1. Figure out how to input bet (w/condition bet cannot be > bank.value)- > Create bet function- what does it do? Where will it go? - I'm thinking it will be the mother function for entire powerplay.
  i.e click bet -> triggers playPowerPlay- trigers prize
  2. PlayPowerPlay() - same rules as lotto but house only has 1 digit array while player could have 1-3 #'s ( figure out how that bit works)
  3. Consider creating a "Draw again" button - that triggers play() again. 
