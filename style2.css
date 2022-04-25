@@ -21,6 +21,7 @@ color: white;    text-align: center;
         grid-column:  repeat(3, 1fr);
         grid-row: repeat(8,1fr);
         width: 100%;
+        overflow-wrap:normal ;
        }
     /*Game Header*/
     .item1{
@@ -49,6 +50,8 @@ color: white;    text-align: center;
     grid-column: 2;
     grid-row: 4;
     border-style: dotted;
+    font-size: 18px;
+    font-weight: bold;
 
    }
    /*Draw Again Buton*/
@@ -56,6 +59,8 @@ color: white;    text-align: center;
     grid-column: 1;
     grid-row: 4/ span 6;
     border-style: dotted;
+    font-size: 18px;
+    font-weight: bold;
 
    }
    /*Bet Sum*/
@@ -63,6 +68,8 @@ color: white;    text-align: center;
     grid-column: 2;
     grid-row: 5;
     border-style: dotted;
+    font-size: 18px;
+    
 
 
    }
@@ -71,6 +78,8 @@ color: white;    text-align: center;
     grid-column: 2;
     grid-row: 6;
     border-style: dotted;
+    font-size: 18px;
+    font-weight: bold;
 
 
    }
@@ -79,6 +88,8 @@ color: white;    text-align: center;
     grid-column: 3;
     grid-row: 4/ span 6;
     border-style: dotted;
+    font-size: 18px;
+    font-weight: bold;
     
     
 
@@ -122,7 +133,7 @@ color: white;    text-align: center;
     grid-row: 7/ span 8;
     border-style: dotted;
     list-style-position: inside;
-    
-
+    font-size: 24px;
+    line-height: 2;
 
    }
