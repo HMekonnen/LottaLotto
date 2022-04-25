@@ -29,11 +29,12 @@ Click "End Game" button on the right
 An alert will pop up displaying player and computer values 
 Winner has the highest bank value at the end of the game
 
-**Technologies used: **
+**Technologies used:**
+
 Class Constructor for Name, Lotto Numbers, Bank Values, and Power Play Numbers
 Method: newNums - assists w/ resetting lottery numbers with each draw
 
-**DOM: **
+**DOM:**
 
 Document.getElementByID- To display lottery numbers, bank values, and announcements 
 OnClick()
