@@ -5,38 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!--CSS Tag--> 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
     <title>'Lotta Lotto</title>
 
 </head>
 <body>
-    <video autoplay muted loop id="myVideo"> 
-        <source src="https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/GTYSdDW/flashing-circles-party-lights_wytuy1wbs__e5545f9c0662f7c49c3cde56fc51666c__P360.mp4" type="video/mp4"></video>
-    <div class="grid-container">
-        <div class="item1">Game Name- 'Lotta Lotto! + rules/ how to --or add an id + stories page for how to instruction- maybe even make a how to video! </div>
-        <div class="item2" id="houseDisplay">Winning Number Display Board</div><br>
-        <button class="item3" id ="item3" onclick="play()"> Click to play Lotto! </button>
-        <div class="item4" id="playerDisplay">Player Num Display</div>
-        <div class="item5" id="computerDisplay">Comp Player Num Display</div>
-        <div class="item6"id="playerBank">Player Bank</div>
-        <div class="item7" id="compBank">Comp Bank</div>
-        <div class="item8" id="housePowerDisplay">PowerPlay #'s display</div>   
-        <input class="item9" id="betSum" placeholder="Enter Bet Sum Here" > Bet function / board </input>
-        <button class="item10" id="betButton" onclick="bet()" > Click to bet! </button>
-        <button class="item11" id="powerPlayButton" onclick="powerPlay()" >PowerPlay button</button>
-        <div class="item12" id="playerPowerDisplay">Player power # display</div>
-        <div class="item13" id="computerBank">Comp power # display</div>
-        <button class="item14" id="item14" onclick="endGame()"> End Game button/function </button>
-        <div class="howToPlay">How to play</div>
-
-        <div class="item15">Footer/ misc. </div>
+    <div class="container">
+        <div class="item1"> 'Lotta Lotto!</div>
+        <div class="item2" id="houseDisplay">House Winning Number Display</div>
+        <div class="item3" id="message">Announcements</div>
+          <button class="item4" id ="item3" onclick="play()"> Click to play Lotto! </button>
+        <button class="item5" id="drawAgainButton" onclick="play()" >Draw Again </button>
+        <input class="item6" id="betSum" placeholder="Enter Bet Sum Here" >  </input>
+        <button class="item7" id="betButton" onclick="bet()" > Click to bet! </button>
+        <button class="item8" id="item14" onclick="endGame()"> End Game button</button>
+       
+        <div class="item9"id="playerWinnings">Player Bank</div>
+        <div class="item10" id="compWinnings">Computer Bank</div>
+        <div class="item11" id="playerDisplay">Player Lotto Number Display</div>
+        <div class="item12" id="computerDisplay">Computer Lotto Display</div>
+        <div class="item13">  <h3>How to Play:</h3>
+            <ul>
+                <h4>Main Lotto Game</h4>
+                <li>Winning numbers are displayed top center</li>
+                <li>Start the game by clicking "Click to play lotto"</li> 
+                <li>Continue to draw by clicking "Draw Again"</li> 
+                <li>You will receive $10.00 for every number matched to the winning lotto numbers</li> 
+                <h4>Power Play</h4>
+                <li>You have an opportunity to bet your money in a powerplay round</li> 
+                <li>If you match the powerplay number, your bet will be multiplied by 10. <br>
+                <li>If you do not match in powerplay, 1/4 of your bet * 10 goes to your opponent!</li> 
+                <li>Winner has the highest bank value at the end of the game</li> 
+                <li>Click "End Game" to tally up bank values and end the game. </li>  
+            </ul> 
+        </div>
     </div>  
    
 
 
 
 <!--JS Tag-->
-    <script src="app.js"></script>
+    <script src="take2.js"></script>
 
 </body>
 </html>
