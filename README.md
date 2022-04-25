@@ -34,10 +34,11 @@ Class Constructor for Name, Lotto Numbers, Bank Values, and Power Play Numbers
 Method: newNums - assists w/ resetting lottery numbers with each draw
 
 **DOM: **
+
 Document.getElementByID- To display lottery numbers, bank values, and announcements 
 OnClick()
 
-**Functions: **
+**Functions:**
 
 **play()** - utilizes class method, conditional statements, for loop, and DOM
 Use Case: 
